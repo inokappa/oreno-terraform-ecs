@@ -12,7 +12,7 @@ variable "ssh_key_name" {}
 # SSH access allow
 # variable "ssh_allow_ip" {}
 
-# Amazon Linux AMI 2014.09.2
+# 
 variable "aws_amis" {
   default = {
       "ap-northeast-1" = "ami-50b01450"
