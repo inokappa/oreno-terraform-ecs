@@ -1,0 +1,40 @@
+[
+  {
+    "environment": [
+        {
+            "name": "REDIS_HOST",
+            "value": "redis"
+        }
+    ],
+    "links": [
+        "redis"
+    ],
+    "name": "centos",
+    "image": "centos:centos6",
+    "cpu": 10,
+    "portMappings": [
+      {
+          "containerPort": 4567,
+          "hostPort": 0
+      }
+    ],
+    "memory": 10,
+    "command": [
+      "/bin/sh", "-c", "hostname -s > /tmp/index.html ; cd /tmp/ ; python -m SimpleHTTPServer 4567"
+    ],
+    "essential": true
+  },
+  {
+    "name": "redis",
+    "image": "redis",
+    "cpu": 10,
+    "portMappings": [
+      {
+          "containerPort": 6379,
+          "hostPort": 0
+      }
+    ],
+    "memory": 10,
+    "essential": true
+  }
+]

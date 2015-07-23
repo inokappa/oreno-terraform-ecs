@@ -1,0 +1,18 @@
+[
+  {
+    "environment": [],
+    "name": "registry",
+    "image": "registry:2",
+    "cpu": 10,
+    "portMappings": [
+      {
+          "containerPort": 5000,
+          "hostPort": 5000
+      }
+    ],
+    "memory": 10,
+    "command": [
+    ],
+    "essential": true
+  }
+]
