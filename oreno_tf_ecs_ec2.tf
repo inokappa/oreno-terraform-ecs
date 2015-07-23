@@ -1,5 +1,8 @@
+#
+# Launch Container Instance
+#
 resource "aws_instance" "oreno_tf_ecs" {
-  count = 1
+  count = 0
   instance_type = "${var.instance_type}"
   ami = "${lookup(var.aws_amis, var.region)}"
   subnet_id = "${var.subnet}"

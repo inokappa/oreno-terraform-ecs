@@ -1,7 +1,13 @@
+#
+# Create ECS cluster
+#
 resource "aws_ecs_cluster" "kappa-cluster" {
   name = "kappa-cluster"
 }
 
+#
+# Define task
+#
 resource "aws_ecs_task_definition" "sample_app1" {
   family = "sample_app1"
   container_definitions = "${file("task-definitions/foo.json")}"
@@ -17,6 +23,9 @@ resource "aws_ecs_task_definition" "docker_registry" {
   container_definitions = "${file("task-definitions/registry.json")}"
 }
 
+#
+# Define Service(as container start)
+#
 resource "aws_ecs_service" "kappa-sample1" {
   name = "kappa-sample1"
   cluster = "${aws_ecs_cluster.kappa-cluster.id}"

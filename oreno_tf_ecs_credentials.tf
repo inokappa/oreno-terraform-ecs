@@ -1,5 +1,5 @@
 #
-# AWS credetials
+# AWS credetials(Use argument)
 #
 provider "aws" {
     access_key = "${var.access_key}"
