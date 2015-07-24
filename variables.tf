@@ -37,5 +37,8 @@ variable "subnet" {}
 # SecurityGroup
 variable "securiy_group" {}
 
-# Subnet
-variable "iam_profile_name" {}
+# IAM role
+# variable "iam_profile_name" {}
+
+# S3 bucket name
+variable "s3_bucket_name" {}
