@@ -8,6 +8,7 @@
 - VPC Subnet ID
 - Security Group
 - IAM role(for Container Instance)
+- S3 Bucket(for docker-registry)
 
 ### terraform plan
 
@@ -19,6 +20,7 @@ terraform plan \
 -var 'subnet=subnet-12345678' \
 -var 'securiy_group=sg-12345678' \
 -var 'iam_profile_name=your_iam_role_name'
+-var 's3_bucket_name=your-s3-bucket-name'
 ```
 
 ### terraform apply
@@ -31,6 +33,20 @@ terraform apply \
 -var 'subnet=subnet-12345678' \
 -var 'securiy_group=sg-12345678' \
 -var 'iam_profile_name=your_iam_role_name'
+-var 's3_bucket_name=your-s3-bucket-name'
+```
+
+### terraform destroy
+
+```
+terraform destroy \
+-var 'access_key=AK123456789123456789' \
+-var 'secret_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
+-var 'ssh_key_name=your_ssh_key_name' \
+-var 'subnet=subnet-12345678' \
+-var 'securiy_group=sg-12345678' \
+-var 'iam_profile_name=your_iam_role_name'
+-var 's3_bucket_name=your-s3-bucket-name'
 ```
 
 ### description
