@@ -38,6 +38,8 @@ terraform apply \
 
 ### terraform destroy
 
+Caution : s3 bucket `force_destroy = "true"` so when you run the destroy s3 bucket will be removed.
+
 ```
 terraform destroy \
 -var 'access_key=AK123456789123456789' \
