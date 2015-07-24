@@ -8,7 +8,7 @@ resource "aws_instance" "oreno_tf_ecs" {
   subnet_id = "${var.subnet}"
   associate_public_ip_address = true
   vpc_security_group_ids = ["${var.securiy_group}"]
-  iam_instance_profile = "${var.iam_profile_name}"
+  iam_instance_profile = "ecs_iam_role"
   key_name = "${var.ssh_key_name}"
   tags = {
     Name = "${lookup(var.tag_names, count.index)}"

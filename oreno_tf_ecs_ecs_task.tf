@@ -1,3 +1,20 @@
+#
+# Define task
+#
+resource "aws_ecs_task_definition" "sample_app1" {
+  family = "sample_app1"
+  container_definitions = "${file("task-definitions/foo.json")}"
+}
+
+resource "aws_ecs_task_definition" "sample_app2" {
+  family = "sample_app2"
+  container_definitions = "${file("task-definitions/bar.json")}"
+}
+
+resource "aws_ecs_task_definition" "docker_registry" {
+  family = "docker_registry"
+  # container_definitions = "${file("task-definitions/registry.json")}"
+  container_definitions = <<EOF
 [
   {
     "environment": [
@@ -5,17 +22,17 @@
             "name": "REGISTRY_STORAGE",
             "value": "s3"
         },
-       	{
+        {
             "name": "REGISTRY_STORAGE_S3_ROOTDIRECTORY",
             "value": "/"
         },
-	    {
+            {
             "name": "REGISTRY_STORAGE_S3_REGION",
             "value": "ap-northeast-1"
         },
         {
             "name": "REGISTRY_STORAGE_S3_BUCKET",
-            "value": "oreno-tf-ecs-docker-registry"
+            "value": "${var.s3_bucket_name}"
         }
     ],
     "name": "registry",
@@ -33,3 +50,5 @@
     "essential": true
   }
 ]
+EOF
+}
