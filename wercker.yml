@@ -28,7 +28,7 @@ build:
             -var 'ssh_key_name=your_ssh_key_name' \
             -var 'subnet=subnet-12345678' \
             -var 'securiy_group=sg-12345678' \
-            -var 'iam_profile_name=your_iam_role_name'
+            -var 'iam_profile_name=your_iam_role_name' \
             -var 's3_bucket_name=your-s3-bucket-name'
     #- script:
     #    name: run terraform apply 
