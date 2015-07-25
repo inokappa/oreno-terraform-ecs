@@ -1,4 +1,5 @@
 ## oreno-terraform-ecs
+[![wercker status](https://app.wercker.com/status/b7f38c2f7e8bb854acf0b679b3b250ed/s/master "wercker status")](https://app.wercker.com/project/bykey/b7f38c2f7e8bb854acf0b679b3b250ed)
 
 ### required
 
