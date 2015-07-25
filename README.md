@@ -54,3 +54,4 @@ terraform destroy \
 ### description
 
 - [terraform で Amazon ECS 環境を弄る](http://inokara.hateblo.jp/entry/2015/07/24/075231)
+- [terraform で Amazon ECS 環境を弄る（2）〜 docker-registry でプライベートリポジトリ環境を一気通貫で作る 〜](http://inokara.hateblo.jp/entry/2015/07/25/103130)
