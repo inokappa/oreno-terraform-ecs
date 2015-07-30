@@ -29,7 +29,8 @@ build:
             -var 'subnet=subnet-12345678' \
             -var 'securiy_group=sg-12345678' \
             -var 'iam_profile_name=your_iam_role_name' \
-            -var 's3_bucket_name=your-s3-bucket-name'
+            -var 's3_bucket_name=your-s3-bucket-name' \
+            -var 'datadog_api_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' \
     #- script:
     #    name: run terraform apply 
     #    code: |

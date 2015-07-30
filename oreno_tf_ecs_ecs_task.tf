@@ -52,3 +52,44 @@ resource "aws_ecs_task_definition" "docker_registry" {
 ]
 EOF
 }
+
+resource "aws_ecs_task_definition" "datadog_agent" {
+  family = "datadog_agent"
+  container_definitions = <<EOF
+[
+  {
+    "environment": [
+        {
+            "name": "API_KEY",
+            "value": "${var.datadog_api_key}"
+        }
+    ],
+    "mountPoints": [
+        {
+            "sourceVolume": "/var/run/docker.sock",
+            "containerPath": "/var/run/docker.sock",
+            "readOnly": false
+        },
+        {
+            "sourceVolume": "/host/proc/mounts",
+            "containerPath": "/proc/mounts",
+            "readOnly": true
+        },
+        {
+            "sourceVolume": "/host/sys/fs/cgroup",
+            "containerPath": "/sys/fs/cgroup/",
+            "readOnly": true
+        }
+    ],
+    "name": "dd-agent",
+    "image": "datadog/docker-dd-agent",
+    "cpu": 0,
+    "memory": 256,
+    "portMappings": [],
+    "command": [
+    ],
+    "essential": true
+  }
+]
+EOF
+}

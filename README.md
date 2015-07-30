@@ -10,6 +10,7 @@
 - Security Group
 - IAM role(for Container Instance)
 - S3 Bucket(for docker-registry)
+- Datadog API Key(for Datadog Agent)
 
 ### terraform plan
 
@@ -20,8 +21,9 @@ terraform plan \
 -var 'ssh_key_name=your_ssh_key_name' \
 -var 'subnet=subnet-12345678' \
 -var 'securiy_group=sg-12345678' \
--var 'iam_profile_name=your_iam_role_name'
--var 's3_bucket_name=your-s3-bucket-name'
+-var 'iam_profile_name=your_iam_role_name' \
+-var 's3_bucket_name=your-s3-bucket-name' \
+-var 'datadog_api_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 ```
 
 ### terraform apply
@@ -33,8 +35,9 @@ terraform apply \
 -var 'ssh_key_name=your_ssh_key_name' \
 -var 'subnet=subnet-12345678' \
 -var 'securiy_group=sg-12345678' \
--var 'iam_profile_name=your_iam_role_name'
--var 's3_bucket_name=your-s3-bucket-name'
+-var 'iam_profile_name=your_iam_role_name' \
+-var 's3_bucket_name=your-s3-bucket-name'\
+-var 'datadog_api_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 ```
 
 ### terraform destroy
@@ -48,8 +51,9 @@ terraform destroy \
 -var 'ssh_key_name=your_ssh_key_name' \
 -var 'subnet=subnet-12345678' \
 -var 'securiy_group=sg-12345678' \
--var 'iam_profile_name=your_iam_role_name'
--var 's3_bucket_name=your-s3-bucket-name'
+-var 'iam_profile_name=your_iam_role_name' \
+-var 's3_bucket_name=your-s3-bucket-name' \
+-var 'datadog_api_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 ```
 
 ### description

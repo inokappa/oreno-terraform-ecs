@@ -21,3 +21,10 @@ resource "aws_ecs_service" "kappa-registry" {
   task_definition = "${aws_ecs_task_definition.docker_registry.arn}"
   desired_count = 0
 }
+
+resource "aws_ecs_service" "dd-agent" {
+  name = "dd-agent"
+  cluster = "${aws_ecs_cluster.kappa-cluster.id}"
+  task_definition = "${aws_ecs_task_definition.datadog_agent.arn}"
+  desired_count = 1
+}

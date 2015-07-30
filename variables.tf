@@ -42,3 +42,6 @@ variable "securiy_group" {}
 
 # S3 bucket name
 variable "s3_bucket_name" {}
+
+# Datadog API Key
+variable "datadog_api_key" {}
